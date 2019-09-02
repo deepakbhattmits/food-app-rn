@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-// import * as Font from 'expo-font';
-// import { AppLoading } from 'expo';
-
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import MealsNavigator from './src/navigation/MealsNavigator';

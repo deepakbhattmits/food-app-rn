@@ -19,7 +19,7 @@ const FavoritesScreen = props =>  {
  FavoritesScreen.navigationOptions = navData => {
     return {
         headerTitle: 'Your Favorites',
-        headerLeft: <HeaderButtons HeaderButtonComponent={ CustomHeaderButton }>
+        headerLeft: ( <HeaderButtons HeaderButtonComponent={ CustomHeaderButton }>
                         <Item 
                             title='Menu'
                             iconName='ios-menu'
@@ -27,7 +27,7 @@ const FavoritesScreen = props =>  {
                             navData.navigation.toggleDrawer();
                             }}
                         />
-                    </HeaderButtons>,
+                       </HeaderButtons> ),
     }
   };
 export default FavoritesScreen;

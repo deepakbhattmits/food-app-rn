@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import { MEALS } from '../../data/dummy-data';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
@@ -6,10 +6,21 @@ import CustomHeaderButton from '../components/CustomHeaderButton';
 import DefaultText from '../components/DefaultText';
 import ListItem from '../components/ListItem';
 
+import { useSelector } from 'react-redux';
+
 const MealDetailScreen = props =>  {
-    const mealId = props.navigation.getParam('categoryId');
-    const selectedMealDetail = MEALS.find( el => el.id === mealId );
+    // const availableMeals = useSelector(state => state.meals.meals)
+    // const mealId = props.navigation.getParam('categoryId');
+    // const selectedMealDetail = availableMeals.find( el => el.id === mealId );
+    const availableMeals = useSelector(state => state.meals.meals);
+  const mealId = props.navigation.getParam('mealId');
+
+  const selectedMealDetail = availableMeals.find(meal => meal.id === mealId);
+
     const { imageUrl, duration, complexity, affordability, ingredients, steps } = selectedMealDetail;
+    // useEffect(()=> {
+    //     props.navigation.setParams({ mealTitle: title })}
+    //     , [title]);
     return (
         <ScrollView style={ styles.details }>
           
@@ -36,10 +47,12 @@ const MealDetailScreen = props =>  {
     )
 };
 MealDetailScreen.navigationOptions = navigationData => {
-    const mealId = navigationData.navigation.getParam('categoryId');
-    const selectedMealDetail = MEALS.find( el => el.id === mealId );
+    // const mealId = navigationData.navigation.getParam('categoryId');
+    // const mealTitle = navigationData.navigation.getParam('mealTitle');
+    const mealTitle = navigationData.navigation.getParam('mealTitle');
+    // const selectedMealDetail = mealTitle.find( el => el.id === mealId );
     return {
-        headerTitle: selectedMealDetail.title,
+        headerTitle: mealTitle,
         headerRight: <HeaderButtons HeaderButtonComponent={ CustomHeaderButton }>
                         <Item 
                             title='Favourite'

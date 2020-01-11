@@ -3,8 +3,34 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import MealsNavigator from './src/navigation/MealsNavigator';
 import { useScreens } from 'react-native-screens';
-useScreens(); // 
 
+import { createStore, combineReducers } from "redux";
+
+
+// import { persistStore, persistReducer } from "redux-persist"
+// import { PersistGate } from "redux-persist/integration/react"
+// import storage from "redux-persist/lib/storage"
+
+import { Provider } from 'react-redux';
+import { mealsReducer } from "./src/store/reducers/mealsReducer";
+useScreens(); //
+
+
+
+// const persistConfig = {
+//   key: "root",
+//   storage
+// };
+// const persistedReducer = persistReducer(persistConfig, mealsReducer);
+
+// const persistor = persistStore(store);
+
+const  rootReducer = combineReducers({
+  meals: mealsReducer
+}) 
+const store = createStore(rootReducer);
+
+// const store =persistStore( persistedReducer)
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -24,7 +50,13 @@ const App = () =>  {
       />
     );
   }
-  return <MealsNavigator />;
+  return (
+      <Provider store={ store }>
+         {/* <PersistGate loading={null} persistor={persistor}> */}
+            <MealsNavigator />
+        {/* </PersistGate> */}
+      </Provider>
+      );
 }
 
 export default App;

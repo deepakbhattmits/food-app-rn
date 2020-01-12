@@ -1,34 +1,33 @@
-import React from 'react'
-import MealList from "../components/MealList";
+/** @format */
+
+import React from 'react';
+import MealList from '../components/MealList';
 import { useSelector } from 'react-redux';
 
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 
-
-const FavoritesScreen = props =>  {
-    // const favMeals = useSelector(state=> state.meals.favoriteMeals);
-    const favMeals = useSelector(state => state.meals.favoriteMeals);
-    return (
-        <MealList
-            listData={ favMeals } 
-            navigation={ props.navigation }
-        />
-    )
+const FavoritesScreen = props => {
+	// const favMeals = useSelector(state=> state.meals.favoriteMeals);
+	const favMeals = useSelector(state => state.meals.favoriteMeals);
+	console.log('TEST : ', favMeals);
+	return <MealList listData={favMeals} navigation={props.navigation} />;
 };
 
- FavoritesScreen.navigationOptions = navData => {
-    return {
-        headerTitle: 'Your Favorites',
-        headerLeft: ( <HeaderButtons HeaderButtonComponent={ CustomHeaderButton }>
-                        <Item 
-                            title='Menu'
-                            iconName='ios-menu'
-                            onPress={ ()=> {
-                            navData.navigation.toggleDrawer();
-                            }}
-                        />
-                       </HeaderButtons> ),
-    }
-  };
+FavoritesScreen.navigationOptions = navData => {
+	return {
+		headerTitle: 'Your Favorites',
+		headerLeft: (
+			<HeaderButtons HeaderButtonComponent={CustomHeaderButton}>
+				<Item
+					title='Menu'
+					iconName='ios-menu'
+					onPress={() => {
+						navData.navigation.toggleDrawer();
+					}}
+				/>
+			</HeaderButtons>
+		)
+	};
+};
 export default FavoritesScreen;

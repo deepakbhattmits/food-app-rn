@@ -14,7 +14,7 @@ const MealDetailScreen = props => {
 	const availableMeals = useSelector(state => state.meals.meals);
 	const mealId = props.navigation.getParam('categoryId');
 	const selectedMealDetail = availableMeals.find(el => el.id === mealId);
-	console.log('TEST :', selecteMealDetail);
+	// console.log('TEST :', selecteMealDetail);
 	const availableMeals = useSelector(state => state.meals.meals);
 	const mealId = props.navigation.getParam('mealId');
 

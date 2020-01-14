@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import DefaultText from '../components/DefaultText';
 const MealItem = props => {
+	console.log('test : ',props)
 	let TouchableCmp = TouchableOpacity;
 
 	if (Platform.OS === 'android' && Platform.Version >= 21) {

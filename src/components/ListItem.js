@@ -5,7 +5,7 @@ import { View, StyleSheet } from 'react-native';
 import DefaultText from './DefaultText';
 
 const ListItem = props => {
-	console.log('TEST :', props);
+	// console.log('TEST :', props);
 	return (
 		<View style={styles.list}>
 			<DefaultText>{props.children}</DefaultText>

@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet } from 'react-native';
 import MealItem from './MealItem';
 
 const MealList = props => {
+    console.log('test : ', props)
     const renderMealItem = itemData => {
         return (
             <MealItem

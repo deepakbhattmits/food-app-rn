@@ -10,7 +10,7 @@ import CustomHeaderButton from '../components/CustomHeaderButton';
 const FavoritesScreen = props => {
 	// const favMeals = useSelector(state=> state.meals.favoriteMeals);
 	const favMeals = useSelector(state => state.meals.favoriteMeals);
-	console.log('TEST : ', favMeals);
+	// console.log('TEST : ', favMeals);
 	return <MealList listData={favMeals} navigation={props.navigation} />;
 };
 

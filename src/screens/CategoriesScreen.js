@@ -9,7 +9,7 @@ import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 
 const CategoriesScreen = props => {
-	// console.log('TEST :', props);
+	console.log('TEST :', props);
 	const renderGridItem = itemData => {
 		return (
 			<CategoryGridTile

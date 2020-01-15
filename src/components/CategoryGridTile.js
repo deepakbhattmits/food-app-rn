@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 const CategoryGridTile = props => {
-	// console.log('test : ', props);
+	console.log('test : ', props);
 	let TouchableCmp = TouchableOpacity;
 
 	if (Platform.OS === 'android' && Platform.Version >= 21) {

@@ -9,7 +9,7 @@ import Colors from '../constants/Colors';
 
 const FiltersScreen = props => {
 	const { navigation } = props;
-	// console.log('TEST : ', navigation);
+	console.log('TEST : ', navigation);
 	const [isGlutenFree, setIsGlutenFree] = useState(false);
 	const [isLactoseFree, setIsLactoseFree] = useState(false);
 	const [isVegen, setIsVegen] = useState(false);

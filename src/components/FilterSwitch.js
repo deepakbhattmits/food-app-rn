@@ -4,7 +4,7 @@ import React from 'react';
 import { View, Text, Switch, Platform, StyleSheet } from 'react-native';
 import Colors from '../constants/Colors';
 const FilterSwitch = props => {
-	// console.log('test : ', props);
+	console.log('test : ', props);
 	return (
 		<View style={styles.filterContainer}>
 			<Text>{props.title}</Text>

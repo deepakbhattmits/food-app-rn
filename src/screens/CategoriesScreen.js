@@ -2,15 +2,14 @@
 
 import React from 'react';
 import { FlatList } from 'react-native';
-
 import { CATEGORIES } from '../../data/dummy-data';
 import CategoryGridTile from '../components/CategoryGridTile';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import CustomHeaderButton from '../components/CustomHeaderButton';
 
-const CategoriesScreen = props => {
+const CategoriesScreen = (props) => {
 	console.log('TEST :', props);
-	const renderGridItem = itemData => {
+	const renderGridItem = (itemData) => {
 		return (
 			<CategoryGridTile
 				color={itemData.item.color}
@@ -19,8 +18,8 @@ const CategoriesScreen = props => {
 					props.navigation.navigate({
 						routeName: 'CategoryMeals',
 						params: {
-							categoryId: itemData.item.id
-						}
+							categoryId: itemData.item.id,
+						},
 					});
 				}}
 			/>
@@ -36,7 +35,7 @@ const CategoriesScreen = props => {
 		/>
 	);
 };
-CategoriesScreen.navigationOptions = navData => {
+CategoriesScreen.navigationOptions = (navData) => {
 	return {
 		headerTitle: 'Meal Categories',
 		headerLeft: (
@@ -49,7 +48,7 @@ CategoriesScreen.navigationOptions = navData => {
 					}}
 				/>
 			</HeaderButtons>
-		)
+		),
 	};
 };
 

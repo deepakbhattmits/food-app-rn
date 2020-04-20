@@ -10,15 +10,15 @@ import ListItem from '../components/ListItem';
 
 import { useSelector } from 'react-redux';
 
-const MealDetailScreen = props => {
-	const availableMeals = useSelector(state => state.meals.meals);
+const MealDetailScreen = (props) => {
+	const availableMeals = useSelector((state) => state.meals.meals);
 	const mealId = props.navigation.getParam('categoryId');
-	const selectedMealDetail = availableMeals.find(el => el.id === mealId);
+	const selectedMealDetail = availableMeals.find((el) => el.id === mealId);
 	console.log('TEST :', selecteMealDetail);
-	const availableMeals = useSelector(state => state.meals.meals);
-	const mealId = props.navigation.getParam('mealId');
+	// const availableMeals = useSelector(state => state.meals.meals);
+	// const mealId = props.navigation.getParam('mealId');
 
-	const selectedMealDetail = availableMeals.find(meal => meal.id === mealId);
+	// const selectedMealDetail = availableMeals.find(meal => meal.id === mealId);
 
 	const {
 		imageUrl,
@@ -26,7 +26,7 @@ const MealDetailScreen = props => {
 		complexity,
 		affordability,
 		ingredients,
-		steps
+		steps,
 	} = selectedMealDetail;
 	// useEffect(()=> {
 	//     props.navigation.setParams({ mealTitle: title })}
@@ -55,7 +55,7 @@ const MealDetailScreen = props => {
 		</ScrollView>
 	);
 };
-MealDetailScreen.navigationOptions = navigationData => {
+MealDetailScreen.navigationOptions = (navigationData) => {
 	// const mealId = navigationData.navigation.getParam('categoryId');
 	// const mealTitle = navigationData.navigation.getParam('mealTitle');
 	const mealTitle = navigationData.navigation.getParam('mealTitle');
@@ -72,7 +72,7 @@ MealDetailScreen.navigationOptions = navigationData => {
 					}}
 				/>
 			</HeaderButtons>
-		)
+		),
 	};
 };
 const styles = StyleSheet.create({
@@ -81,16 +81,16 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 		padding: 15,
-		backgroundColor: '#f4f4f4'
+		backgroundColor: '#f4f4f4',
 	},
 	img: {
 		width: '100%',
-		height: 200
+		height: 200,
 	},
 	headTitle: {
 		fontFamily: 'open-sans-bold',
 		fontSize: 20,
-		textAlign: 'center'
-	}
+		textAlign: 'center',
+	},
 });
 export default MealDetailScreen;

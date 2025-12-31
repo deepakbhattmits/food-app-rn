@@ -10,7 +10,7 @@
 	"dependencies": {
 		"@expo/vector-icons": "^10.0.0",
 		"expo": "^37.0.0",
-		"expo-cli": "^3.18.5",
+		"expo-cli": "^6.3.12",
 		"expo-font": "~8.1.0",
 		"react": "16.9.0",
 		"react-dom": "16.9.0",
